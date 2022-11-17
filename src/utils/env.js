@@ -4,11 +4,11 @@ module.exports = {
   APP_NAME: process.env.APP_NAME || "My App",
   PORT: process.env.PORT || 5000,
   // database
-  DB_HOST: process.env.DB_HOST,
-  DB_USER: process.env.DB_USER,
-  DB_PASSWORD: process.env.DB_PASSWORD,
-  DB_NAME: process.env.DB_NAME,
-  DB_PORT: process.env.DB_PORT,
+  DB_HOST: process.env.PGHOST,
+  DB_USER: process.env.PGUSER,
+  DB_PASSWORD: process.env.PGPASSWORD,
+  DB_NAME: process.env.PGDATABASE,
+  DB_PORT: process.env.PGPORT,
   // jwt
   JWT_SECRET: process.env.JWT_SECRET,
   // google

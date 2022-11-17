@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const xss = require("xss-clean");
 const cors = require("cors");
 const socketController = require("./src/socket");
-const { APP_NAME, NODE_ENV, PORT } = require("./src/utils/env");
+const { PORT } = require("./src/utils/env");
 const { failed } = require("./src/utils/createResponse");
 
 // deklarasi express
@@ -24,9 +24,7 @@ app.use(cors());
 app.use(express.static("public"));
 
 // root router
-app.get("/", (req, res) =>
-  res.send(`${APP_NAME} API - ${NODE_ENV[0].toUpperCase() + NODE_ENV.slice(1)}`)
-);
+app.get("/", (req, res) => res.send(`Telegrams API v1.0`));
 // main router
 app.use(require("./src/routes/auth.route.js"));
 app.use(require("./src/routes/user.route.js"));
@@ -52,5 +50,5 @@ io.on("connection", (socket) => {
 
 // running server
 server.listen(PORT, () => {
-  console.log(`Server started on http://localhost:${PORT}`);
+  console.log(`Server started on port : ${PORT}`);
 });
