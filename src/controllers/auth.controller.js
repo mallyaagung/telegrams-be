@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const crypto = require("crypto");
 const { v4: uuidv4 } = require("uuid");
 const authModel = require("../models/auth.model");
 const userModel = require("../models/user.model");
