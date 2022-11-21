@@ -1,6 +1,6 @@
-const http = require("http");
+const { createServer } = require("http");
 const express = require("express");
-const socketIo = require("socket.io");
+const { Server } = require("socket.io");
 const helmet = require("helmet");
 const xss = require("xss-clean");
 const cors = require("cors");
@@ -20,7 +20,11 @@ app.use(
   })
 );
 app.use(xss());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.static("public"));
 
 // root router
