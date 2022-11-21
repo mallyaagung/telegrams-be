@@ -41,8 +41,8 @@ app.use((req, res) => {
   });
 });
 
-const server = http.createServer(app);
-const io = socketIo(server, {
+const server = createServer(app);
+const io = Server(server, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
