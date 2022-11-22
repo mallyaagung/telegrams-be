@@ -55,6 +55,6 @@ io.on("connection", (socket) => {
 });
 
 // running server
-server.listen(PORT || 5000, () => {
+httpServer.listen(PORT || 5000, () => {
   console.log(`Server started on port : ${PORT}`);
 });
