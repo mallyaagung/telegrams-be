@@ -22,7 +22,6 @@ const uploadGoogleDrive = async (file) => {
       requestBody: {
         name: file.filename,
         mimeType: file.mimetype,
-        parents: "1dJvDIzFCslNKGzsAgwSjawbzlVwOxX-j",
       },
       media: {
         mimeType: file.mimetype,
