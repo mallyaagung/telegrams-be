@@ -12,13 +12,14 @@ const { failed } = require("./src/utils/createResponse");
 const app = express();
 
 // middleware
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(
-  helmet({
-    crossOriginEmbedderPolicy: false,
-    crossOriginResourcePolicy: false,
-  })
-);
+// app.use(
+//   helmet({
+//     crossOriginEmbedderPolicy: false,
+//     crossOriginResourcePolicy: false,
+//   })
+// );
 app.use(xss());
 app.use(
   cors({
@@ -42,7 +43,7 @@ app.use((req, res) => {
 });
 
 const server = createServer(app);
-const io = Server(server, {
+const io = new Server(server, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
